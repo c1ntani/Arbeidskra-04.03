@@ -1,5 +1,6 @@
 // Welcoming alert
 alert("Hei og velkommen til din personlige handleliste! SKRIV HVORDAN BRUKES")
+alert("tekst")
 
 //What I already have
 var enoughArray = [];
@@ -80,7 +81,7 @@ function confirmDeleteEventually(i) {
 //
 
 //Must buy
-var buyProduct = [{ name: "", price: 0  }];
+var buyProduct = [{ name: "", price: 0 }];
 var buyProductList = document.getElementById("buy-product-list");
 
 showBuyProduct();
@@ -109,14 +110,27 @@ function addBuyProduct() {
   var priceInput = document.getElementById("price-input");
 
   var priceProduct = parseInt(priceInput.value);
-  if (!isNaN(priceProduct) && priceProduct > 0) {
+  if(buyInput.value.length !== 0 && priceInput.value > 0){
     var newProduct = { name: buyInput.value, price: priceInput.value };
-    buyProduct.push(newProduct);
-    showBuyProduct();
+     buyProduct.push(newProduct);
+     showBuyProduct();
   } else {
-    alert("Error");
-  }
+    alert("Fyll inn alle felt")
+  } 
 }
+
+
+
+//   if (isNaN(priceProduct) &&  priceProduct > 0) {
+//     var newProduct = { name: buyInput.value, price: priceInput.value };
+//     buyProduct.push(newProduct);
+//     showBuyProduct();
+//   } else if (priceInput.isNaN && priceProduct == "") {
+//     alert("Du må fylle alle felter!");
+//   } else {
+//     alert("Noe gikk galt! Fyll ut alle felt!")
+//   }
+// }
 
 function confirmDeleteBuy(i) {
   let confirmDeleteBuy = prompt(
