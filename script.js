@@ -77,7 +77,7 @@ function confirmDeleteEventually(i) {
 //
 
 //Must buy
-var buyProduct = [{ name: "", price: 0 }];
+var buyProduct = [{ name: "", price: 0  }];
 var buyProductList = document.getElementById("buy-product-list");
 
 showBuyProduct();
@@ -86,14 +86,16 @@ function showBuyProduct() {
   var price = 0;
   buyProductList.innerHTML = "";
   for (var i = 0; i < buyProduct.length; i++) {
-    buyProductList.innerHTML += `<li id="buy-product">
-    <p id="buy-name">
-          ${buyProduct[i].name}
-        </p>
-        <button id="delete-buy" onclick="confirmDeleteBuy(${i})">Slett</button>
-        </li>
-        `;
-    price = price + parseInt(buyProduct[i].price);
+    if (buyProduct.length > 1){
+      buyProductList.innerHTML = `<li id="buy-product">
+      <p id="buy-name">
+            ${buyProduct[i].name}
+          </p>
+          <button id="delete-buy" onclick="confirmDeleteBuy(${i})">Slett</button>
+          </li>
+          `;
+      price = price + parseInt(buyProduct[i].price);
+    }
   }
 
   document.getElementById("calculatePrice").innerHTML = price;
