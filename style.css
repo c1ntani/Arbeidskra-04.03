@@ -7,3 +7,8 @@ body {
   background-size: cover;
   height: 600px;
 }
+
+#calculatePrice {
+  background-color: red;
+}
+

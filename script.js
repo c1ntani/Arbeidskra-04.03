@@ -1,3 +1,6 @@
+// Welcoming alert
+alert("Hei og velkommen til din personlige handleliste! SKRIV HVORDAN BRUKES")
+
 //What I already have
 var enoughArray = [];
 var enoughProductList = document.getElementById("enough-product-list");
