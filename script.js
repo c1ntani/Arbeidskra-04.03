@@ -77,48 +77,49 @@ function confirmDeleteEventually(i) {
 //
 
 //Must buy
-var buyArray = [];
+var buyProduct = [{ name: "", price: 0 }];
 var buyProductList = document.getElementById("buy-product-list");
 
 showBuyProduct();
 
 function showBuyProduct() {
+  var price = 0;
   buyProductList.innerHTML = "";
-  for (let i = 0; i < buyArray.length; i++) {
-    buyProductList.innerHTML += `<li>${buyArray[i].name} - ${buyArray[i].pris},- <span onclick ="deleteMoreItem(${i})">X</span></li>`;
-    showPrice = showPrice + parseInt(buyArray[i].price);
+  for (var i = 0; i < buyProduct.length; i++) {
+    buyProductList.innerHTML += `<li id="buy-product">
+    <p id="buy-name">
+          ${buyProduct[i].name}
+        </p>
+        <button id="delete-buy" onclick="confirmDeleteBuy(${i})">Slett</button>
+        </li>
+        `;
+    price = price + parseInt(buyProduct[i].price);
   }
-  document.getElementById("calculate").innerHTML = showPrice;
-}
 
-function addMoreProduct() {
-  var moreInput = document.getElementById("more-input");
-  var priceInput = document.getElementById("price-input");
-
-  var price = parseInt(priceInput.value);
-  if (!isNaN(price) && price > 0) {
-    var newItem = { name: moreInput.value, pris: priceInput.value };
-    buyArray.push(newItem);
-    showBuyProduct();
-  } else {
-    alert("ERROR!!!!");
-  }
+  document.getElementById("calculatePrice").innerHTML = price;
 }
 
 function addBuyProduct() {
-  let buyProductInput = document.getElementById("buy-input").value;
-  var buyArray = [];
-  buyArray.push({ name: buyProductInput });
-  showBuyProduct();
+  var buyInput = document.getElementById("buy-input");
+  var priceInput = document.getElementById("price-input");
+
+  var priceProduct = parseInt(priceInput.value);
+  if (!isNaN(priceProduct) && priceProduct > 0) {
+    var newProduct = { name: buyInput.value, price: priceInput.value };
+    buyProduct.push(newProduct);
+    showBuyProduct();
+  } else {
+    alert("Error");
+  }
 }
 
 function confirmDeleteBuy(i) {
   let confirmDeleteBuy = prompt(
-    `Ønsker du å slette "${buyArray[i].name}"? Skriv ja eller nei.`
+    `Ønsker du å slette "${buyProduct[i].name}"? Skriv ja eller nei.`
   );
   if (confirmDeleteBuy == "ja") {
-    alert(`${buyArray[i].name} er nå slettet.`);
-    buyArray.splice(i, 1);
+    alert(`${buyProduct[i].name} er nå slettet.`);
+    buyProduct.splice(i, 1);
     showBuyProduct()();
   } else {
     alert("Sletting kansellert");

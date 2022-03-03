@@ -30,16 +30,18 @@
           <ul id="eventually-list"></ul>
         </div>
 
-        <div id="buy-product-container">
+        <!--Må handles-->
+        <div class="buy-product">
           <h3>Må handles</h3>
-          <input
-            type="text"
-            id="buy-product-input"
-            placeholder="Legg til vare"
-          />
-          <input type="number" id="amount" placeholder="Antall" min="1" />
-          <input class="buy-input" id="amount" placeholder="kr" />
+          <div id="calculatePrice"></div>
+          <input type="text" id="buy-input" placeholder="Legg til vare" />
 
+          <input
+            type="number"
+            id="price-input"
+            placeholder="Legg til pris"
+            min="1"
+          />
           <button onclick="addBuyProduct()">Legg til</button>
           <ul id="buy-product-list"></ul>
         </div>
