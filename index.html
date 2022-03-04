@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="groceries">
+      <div class="content">
         <h1>Handleliste</h1>
 
         <div id="enough-product-container">
@@ -33,7 +33,7 @@
         <!--Må handles-->
         <div class="buy-product">
           <h3>Må handles</h3>
-          <input type="text" id="buy-input" placeholder="Legg til vare"/>
+          <input type="text" id="buy-input" placeholder="Legg til vare" />
 
           <input
             type="number"
@@ -42,7 +42,8 @@
             min="1"
           />
           <button onclick="addBuyProduct()">Legg til</button>
-          <div id="calculatePrice"> <h3>test</h3></div>
+          <p>Total pris</p>
+          <div id="calculatePrice"></div>
           <ul id="buy-product-list"></ul>
         </div>
       </div>

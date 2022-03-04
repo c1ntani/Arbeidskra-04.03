@@ -1,14 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
+  text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   height: 100%;
   padding: 1em;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 600px;
+  background-color: #dcdcdc;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #696969;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: #696969;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #696969;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+}
+
+input {
+  margin: 10px auto;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 1.2em;
+  color: #696969;
+  opacity: 0.8;
+  transition: opacity 400ms;
 }
 
 #calculatePrice {
-  background-color: red;
+  width: 50%;
+  padding: 10px;
+  background-color: #696969;
+  text-align: center;
+  margin: 10px auto;
+  color: white;
 }
 
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2em;
+  display: block;
+  margin: 10px auto;
+  width: 50%;
+  background-color: #63b931;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  padding: 20px;
+  transition: background-color 1s;
+}
+
+button:hover {
+  background: #74ce3b;
+}
+
+#delete-already,
+#delete-eventually,
+#delete-buy {
+  cursor: pointer;
+  border-radius: 5px;
+  background: #db0808;
+  right: 0;
+  border: none;
+  color: #fff;
+  width: 20%;
+  transition: background 1s;
+  font-weight: bold;
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#delete-already:hover,
+#delete-eventually:hover,
+#delete-buy:hover {
+  background: #ff0000;
+}
+
+#already-product,
+#eventually-product,
+#buy-product {
+  cursor: pointer;
+  background: #cd5c5c;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 8px;
+  font-weight: bold;
+  margin: 2px 0;
+  border-radius: 20px;
+}
+
+#already-name,
+#eventually-name,
+#buy-name {
+  background-color: transparent;
+  font-size: 1.2em;
+  color: white;
+}

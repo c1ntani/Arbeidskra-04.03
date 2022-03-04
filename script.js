@@ -1,6 +1,8 @@
 // Welcoming alert
-alert("Hei og velkommen til din personlige handleliste! SKRIV HVORDAN BRUKES")
-alert("tekst")
+alert(
+  "Velkommen til din personlige handleliste! Trykk OK for å gå videre til veiledningen."
+);
+alert("Du vil få 3 kategorier");
 
 //What I already have
 var enoughArray = [];
@@ -15,7 +17,7 @@ function showAlreadyProduct() {
     <p id="already-name">
           ${enoughArray[i].name}
         </p>
-        <button id="delete-already" onclick="confirmDeleteAlready(${i})">Slett</button>
+        <button id="delete-already" onclick="confirmDeleteAlready(${i})">X</button>
         </li>
         `;
   }
@@ -27,6 +29,7 @@ function addAlreadyProduct() {
   showAlreadyProduct();
 }
 
+//Delete function for "What I already have"
 function confirmDeleteAlready(i) {
   let confirmDeleteAlready = prompt(
     `Ønsker du å slette "${enoughArray[i].name}"? Skriv ja eller nei.`
@@ -53,7 +56,7 @@ function showEventuallyProduct() {
     <p id="eventually-name">
           ${eventuallyArray[i].name}
         </p>
-        <button id="delete-eventually" onclick="confirmDeleteEventually(${i})">Slett</button>
+        <button id="delete-eventually" onclick="confirmDeleteEventually(${i})">X</button>
         </li>
         `;
   }
@@ -66,6 +69,7 @@ function addEventuallyProduct() {
   showEventuallyProduct();
 }
 
+//Delete function for "What I eventually must buy"
 function confirmDeleteEventually(i) {
   let confirmDeleteEventually = prompt(
     `Ønsker du å slette "${eventuallyArray[i].name}"? Skriv ja eller nei.`
@@ -81,7 +85,7 @@ function confirmDeleteEventually(i) {
 //
 
 //Must buy
-var buyProduct = [{ name: "", price: 0 }];
+var buyProduct = [];
 var buyProductList = document.getElementById("buy-product-list");
 
 showBuyProduct();
@@ -89,18 +93,17 @@ showBuyProduct();
 function showBuyProduct() {
   var price = 0;
   buyProductList.innerHTML = "";
-  for (var i = 0; i < buyProduct.length; i++) {
-    if (buyProduct.length > 1){
-      buyProductList.innerHTML = `<li id="buy-product">
-      <p id="buy-name">
-            ${buyProduct[i].name}
-          </p>
-          <button id="delete-buy" onclick="confirmDeleteBuy(${i})">Slett</button>
-          </li>
-          `;
+  for (var i = 0; i < buyProduct.length; i++)
+    if (buyProduct.length > 0) {
+      buyProductList.innerHTML += `<li id="buy-product">
+    <p id="buy-name">
+          ${buyProduct[i].name}
+        </p>
+        <button id="delete-buy" onclick="confirmDeleteBuy(${i})">X</button>
+        </li>
+        `;
       price = price + parseInt(buyProduct[i].price);
     }
-  }
 
   document.getElementById("calculatePrice").innerHTML = price;
 }
@@ -110,28 +113,16 @@ function addBuyProduct() {
   var priceInput = document.getElementById("price-input");
 
   var priceProduct = parseInt(priceInput.value);
-  if(buyInput.value.length !== 0 && priceInput.value > 0){
+  if (!isNaN(priceProduct) && priceProduct > 0) {
     var newProduct = { name: buyInput.value, price: priceInput.value };
-     buyProduct.push(newProduct);
-     showBuyProduct();
+    buyProduct.push(newProduct);
+    showBuyProduct();
   } else {
-    alert("Fyll inn alle felt")
-  } 
+    alert("Noe gikk galt! Legg inn et tall.");
+  }
 }
 
-
-
-//   if (isNaN(priceProduct) &&  priceProduct > 0) {
-//     var newProduct = { name: buyInput.value, price: priceInput.value };
-//     buyProduct.push(newProduct);
-//     showBuyProduct();
-//   } else if (priceInput.isNaN && priceProduct == "") {
-//     alert("Du må fylle alle felter!");
-//   } else {
-//     alert("Noe gikk galt! Fyll ut alle felt!")
-//   }
-// }
-
+//Delete function for "Things I must buy"
 function confirmDeleteBuy(i) {
   let confirmDeleteBuy = prompt(
     `Ønsker du å slette "${buyProduct[i].name}"? Skriv ja eller nei.`
