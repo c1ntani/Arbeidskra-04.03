@@ -1,8 +1,10 @@
 // Welcoming alert
-//alert(
-//"Velkommen til din personlige handleliste! Trykk OK for å gå videre til veiledningen."
-//);
-//alert("Du vil få 3 kategorier");
+alert(
+  "Velkommen til din personlige handleliste! Trykk OK for å gå videre til veiledningen."
+);
+alert(
+  "Du vil få 3 kategorier: 1. Hva du allerede har, 2. Hva du begynner å gå tom for 3. Hva du må handle. Trykk på X for å fjerne vare."
+);
 
 //What I already have
 var enoughArray = [];
