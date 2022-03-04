@@ -9,7 +9,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   height: 100%;
   padding: 1em;
-  background-color: #dcdcdc;
+  background-color: #b0c4de;
 }
 
 h1 {
@@ -35,6 +35,12 @@ p {
 .container {
   display: grid;
   justify-content: center;
+}
+
+.content {
+  background-color: #dcdcdc;
+  border: 1px solid black;
+  box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 input {
@@ -84,35 +90,31 @@ button:hover {
 #delete-buy {
   cursor: pointer;
   border-radius: 5px;
-  background: #db0808;
-  right: 0;
+  background: transparent;
   border: none;
-  color: #fff;
-  width: 20%;
-  transition: background 1s;
+  font-size: 1.2em;
+  color: #ff4500;
+  width: 5%;
+  height: 50px;
+  bottom: 10px;
+  font-size: medium;
+  display: inline-block;
+  margin: -5px;
+  transition: 0.5s;
   font-weight: bold;
-  outline: none;
 }
 
 ul {
   list-style-type: none;
 }
 
-#delete-already:hover,
-#delete-eventually:hover,
-#delete-buy:hover {
-  background: #ff0000;
-}
-
 #already-product,
 #eventually-product,
 #buy-product {
-  cursor: pointer;
-  background: #cd5c5c;
+  background: #696969;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  padding: 8px;
   font-weight: bold;
   margin: 2px 0;
   border-radius: 20px;
