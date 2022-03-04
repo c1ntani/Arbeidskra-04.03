@@ -14,10 +14,7 @@ function showAlreadyProduct() {
   enoughProductList.innerHTML = "";
   for (let i = 0; i < enoughArray.length; i++) {
     enoughProductList.innerHTML += `<li id="already-product">
-    <p id="already-name">
-          ${enoughArray[i].name}
-        </p>
-        <button id="delete-already" onclick="confirmDeleteAlready(${i})">X</button>
+    <p id="already-name">${enoughArray[i].name} <button id="delete-already" onclick="confirmDeleteAlready(${i})">X</button></p>
         </li>
         `;
   }
@@ -53,10 +50,8 @@ function showEventuallyProduct() {
   eventuallyProductList.innerHTML = "";
   for (let i = 0; i < eventuallyArray.length; i++) {
     eventuallyProductList.innerHTML += `<li id="eventually-product">
-    <p id="eventually-name">
-          ${eventuallyArray[i].name}
-        </p>
-        <button id="delete-eventually" onclick="confirmDeleteEventually(${i})">X</button>
+    <p id="eventually-name">${eventuallyArray[i].name}<button id="delete-eventually" onclick="confirmDeleteEventually(${i})">X</button>
+    </p>
         </li>
         `;
   }
@@ -97,9 +92,7 @@ function showBuyProduct() {
     if (buyProduct.length > 0) {
       buyProductList.innerHTML += `<li id="buy-product">
     <p id="buy-name">
-          ${buyProduct[i].name}
-        </p>
-        <button id="delete-buy" onclick="confirmDeleteBuy(${i})">X</button>
+          ${buyProduct[i].name}<button id="delete-buy" onclick="confirmDeleteBuy(${i})">X</button></p>
         </li>
         `;
       price = price + parseInt(buyProduct[i].price);

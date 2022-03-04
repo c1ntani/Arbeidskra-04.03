@@ -10,7 +10,7 @@ body {
   margin: 1em;
   height: 100%;
   padding: 1.5em;
-  background-color: #b0c4de;
+  background-color: rgba(211, 208, 208, 0.548);
 }
 
 h1 {
@@ -78,7 +78,7 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   border: none;
-  padding: 20px;
+  padding: 10px;
   transition: background-color 1s;
 }
 
